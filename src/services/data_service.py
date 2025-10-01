@@ -1,4 +1,3 @@
-# src/services/data_service.py
 from typing import List, Dict, Any
 from datetime import datetime
 from src.repositories.thingspeak_repository import ThingSpeakRepository
@@ -75,4 +74,5 @@ class DataService:
         for doc in raw_data:
             doc["_id"] = str(doc["_id"])
         
+
         return raw_data
