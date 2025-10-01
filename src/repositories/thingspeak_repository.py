@@ -1,4 +1,3 @@
-# src/repositories/thingspeak_repository.py (CONTEÚDO COMPLETO MODIFICADO)
 import requests
 import os
 from typing import List, Dict, Any
@@ -12,7 +11,6 @@ from pymongo.errors import DuplicateKeyError
 load_dotenv()
 
 class ThingSpeakRepository:
-    # ... (restante do __init__ inalterado)
 
     def __init__(self):
         # Configurações do ThingSpeak
@@ -26,20 +24,15 @@ class ThingSpeakRepository:
         if not self.channel_id or not self.read_key:
              raise EnvironmentError("Variáveis do ThingSpeak não encontradas no .env")
 
-        # NOVO: Cria um índice único para o campo 'created_at'
-        # Isso garante que se tentarmos salvar um dado com um 'created_at' duplicado,
-        # o MongoDB lançará uma exceção, impedindo a duplicata.
         try:
             self.collection.create_index([("created_at", ASCENDING)], unique=True)
             print("Índice único em 'created_at' criado/verificado.")
         except Exception as e:
-            # Em produção, você pode querer logar isso de forma mais robusta.
             print(f"Aviso: Não foi possível criar o índice único: {e}")
 
 
     # --- Métodos de Interação com a API Externa (ThingSpeak) ---
 
-    # ... (método _fetch_latest_data inalterado)
     def _fetch_latest_data(self) -> List[Dict[str, Any]]:
         """
         Busca os feeds mais recentes do ThingSpeak.
@@ -93,10 +86,10 @@ class ThingSpeakRepository:
                 
         return inserted_count
 
-    # ... (método find_all_data inalterado)
     def find_all_data(self) -> List[Dict[str, Any]]:
         """
         Busca todos os documentos salvos na coleção.
         """
         # Limita a busca para simplificar o teste, pode ser removido em produção
+
         return list(self.collection.find().sort("created_at", -1).limit(50))
