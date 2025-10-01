@@ -1,4 +1,3 @@
-# src/config/database.py
 from pymongo import MongoClient
 from dotenv import load_dotenv
 import os
@@ -52,4 +51,5 @@ def get_collection():
     if not collection_name:
         raise EnvironmentError("Variável MONGO_COLLECTION_NAME não encontrada no .env")
         
+
     return db[collection_name]
