@@ -1,4 +1,3 @@
-# main.py (CONTEÚDO COMPLETO MODIFICADO)
 from fastapi import FastAPI
 from dotenv import load_dotenv
 import os
@@ -9,7 +8,7 @@ from src.routers.data_router import router as data_router
 from src.services.data_service import DataService
 from src.repositories.thingspeak_repository import ThingSpeakRepository
 
-# Configuração básica de log para vermos o output do scheduler
+# Configuração básica de log do scheduler
 logging.basicConfig(level=logging.INFO)
 
 # Carrega as variáveis de ambiente
@@ -104,4 +103,5 @@ if __name__ == "__main__":
     
     # Inicia o servidor Uvicorn com hot-reload
     # O Uvicorn irá disparar os eventos de startup
+
     uvicorn.run("main:app", host=host, port=port, reload=True)
