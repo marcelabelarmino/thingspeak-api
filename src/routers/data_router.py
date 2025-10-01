@@ -1,4 +1,3 @@
-# src/routers/data_router.py
 from fastapi import APIRouter, Depends, HTTPException
 from typing import List, Dict, Any
 
@@ -57,4 +56,5 @@ async def get_all_data(
         # Se não houver dados, retorna 404 para o Front-End
         raise HTTPException(status_code=404, detail="Nenhum dado encontrado no MongoDB.")
         
+
     return data
