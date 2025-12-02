@@ -14,13 +14,14 @@ Uma API robusta desenvolvida em **FastAPI** para coletar, processar e armazenar 
 ## 🏗️ Arquitetura
 
 ```
-src/
-├── config/           # Configurações e conexão com DB
-├── entities/         # Modelos de dados (Pydantic)
-├── repositories/     # Camada de acesso a dados
-├── services/         # Lógica de negócio
-├── routers/          # Endpoints da API
-└── main.py          # Aplicação principal
+├── main.py             # Ponto de entrada da aplicação
+├── requirements.txt    # Dependências do projeto
+└── src/
+    ├── config/         # Configurações gerais e conexão com o banco de dados
+    ├── entities/       # Modelos de dados (Pydantic)
+    ├── repositories/   # Camada de acesso a dados (CRUD, queries, DAO)
+    ├── services/       # Regras de negócio e lógica da aplicação
+    ├── routers/        # Endpoints e rotas da API (FastAPI)
 ```
 
 ## 📋 Pré-requisitos
@@ -129,8 +130,8 @@ A aplicação inclui um **scheduler automático** que:
 {
   "_id": "ObjectId",
   "created_at": "datetime",
-  "field1": "float",  # Ex: Temperatura
-  "field2": "float",  # Ex: Umidade
+  "field1": "float",  # Ex: Umidade
+  "field2": "float",  # Ex: Temperatura
   # ... mais fields
 }
 ```
