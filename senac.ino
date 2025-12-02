@@ -3,14 +3,14 @@
 
 // ===== CONFIGURAÇÕES WIFI =====
 // SSID e senha da rede Wi-Fi à qual o dispositivo deve se conectar.
-const char* SSID_WIFI     = "MADU";
-const char* SENHA_WIFI    = "Zuri@2025"; 
+const char* SSID_WIFI     = "NOME-REDE";
+const char* SENHA_WIFI    = "SENHA-REDE"; 
 
 // ===== THINGSPEAK MQTT =====
 // Credenciais e informações para publicar via MQTT no ThingSpeak (Device -> MQTT -> seu device)
-const char* ID_CLIENTE_MQTT = "PScoER8sICcdOAYpJAIELgU";  // exemplo: "channels/3093339/publish/XYZ"
-const char* USUARIO_MQTT    = "PScoER8sICcdOAYpJAIELgU"; // normalmente ID curto fornecido pela plataforma
-const char* SENHA_MQTT      = "+P+jyt101yOMGlFhEbqXhtGS";   // senha/token MQTT
+const char* ID_CLIENTE_MQTT = "ID_CLIENTE_MQTT";  // normalmente ID curto fornecido pela plataforma
+const char* USUARIO_MQTT    = "USUARIO_MQTT"; // normalmente ID curto fornecido pela plataforma
+const char* SENHA_MQTT      = "SENHA_MQTT";   // senha/token MQTT
 const char* CORRETOR_MQTT   = "mqtt3.thingspeak.com";   // broker MQTT do ThingSpeak (ou outro)
 const uint16_t PORTA_MQTT   = 1883; // porta sem TLS; usar 8883 para TLS/SSL
 
