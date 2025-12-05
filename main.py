@@ -67,7 +67,7 @@ async def startup_event():
     # Ajuste 'minutes=5' para a frequência desejada (ex: seconds=30 ou hours=1)
     scheduler.add_job(
         scheduled_data_fetch_job, 
-        trigger=IntervalTrigger(minutes=5), 
+        trigger=IntervalTrigger(minutes=1), 
         id='thingspeak_fetch', 
         name='ThingSpeak Fetch Job', 
         replace_existing=True
