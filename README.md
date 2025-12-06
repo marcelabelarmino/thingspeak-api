@@ -44,12 +44,12 @@ Crie um arquivo `.env` baseado no `.env.example`:
 
 ```env
 # MongoDB Atlas
-MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/?retryWrites=true&w=majority
-MONGO_DB_NAME=thingspeak_data
-MONGO_COLLECTION_NAME=sensor_data
+MONGO_URI=mongodb+srv://<username>:<password>@<cluster-url>/?retryWrites=true&w=majority&appName=cluster_name
+MONGO_DB_NAME=NOME_DB
+MONGO_COLLECTION_NAME=NOME_COLECAO
 
 # ThingSpeak
-THINGSPEAK_CHANNEL_ID=1234567
+THINGSPEAK_CHANNEL_ID=9999999
 THINGSPEAK_READ_API_KEY=XXXXXXXXXXXXXXXX
 
 # Servidor
@@ -60,8 +60,8 @@ PORT=8000
 ### 3. Configuração do ThingSpeak
 
 Certifique-se de que seu canal no ThingSpeak tenha os fields configurados:
-- `field1`: Temperatura
-- `field2`: Umidade
+- `field1`: Umidade
+- `field2`: Temperatura
 
 ## 🚀 Execução
 
@@ -132,7 +132,6 @@ A aplicação inclui um **scheduler automático** que:
   "created_at": "datetime",
   "field1": "float",  # Ex: Umidade
   "field2": "float",  # Ex: Temperatura
-  # ... mais fields
 }
 ```
 
